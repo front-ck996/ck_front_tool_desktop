@@ -5,6 +5,10 @@ class LoadingFitFill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: const Color.fromRGBO(0, 0, 0, 0.46),
+      child: const Center(child: CircularProgressIndicator(),),
+    );
   }
 }
+// Color.fromRGBO(0, 0, 0, 0.46)

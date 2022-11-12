@@ -30,7 +30,7 @@ class UColor {
       }
     }
     if(rgb.a == null){
-      if (alpha > 0) {
+      if (alpha < 0) {
         alpha = 0;
       } else if (alpha > 1) {
         alpha = 1;

@@ -1,5 +1,8 @@
 import 'package:ck_front_tool_dart/app_init.dart';
 import 'package:ck_front_tool_dart/app_router/app_router.dart';
+import 'package:ck_front_tool_dart/utils/u_toast.dart';
+// import 'package:ck_front_tool_dart/utils/u_toast/toast.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
@@ -18,7 +21,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorObservers: [FlutterSmartDialog.observer],
-      builder: FlutterSmartDialog.init(),
+      builder: FlutterSmartDialog.init(
+        toastBuilder: (msg) => UToastParse(msg: msg)
+      ),
       getPages: AppRouter.routers,
       defaultTransition: Transition.leftToRight,
       initialRoute: AppRouter.pageHome,
