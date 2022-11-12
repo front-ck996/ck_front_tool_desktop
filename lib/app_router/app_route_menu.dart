@@ -1,6 +1,6 @@
 import 'package:ck_front_tool_dart/app_router/app_router.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AppRouterMenuItem {
   String routeName;
@@ -64,11 +64,18 @@ class _AppRouteMenuState extends State<AppRouteMenu> {
                   title: Text(element.routeName),
                 );
               },
+              canTapOnHeader: true,
               isExpanded: element.isExpanded,
-              body:  ListTile(title: Text(e.routeName),),
+              body:  ListTile(
+                title: Text(e.routeName),
+                onTap: (){
+                  Get.toNamed(e.routePath);
+                },
+              ),
              )
           ).toList();
           wList.add(ExpansionPanelList(
+
             children: cList,
             expansionCallback:(int panelIndex, bool isExpanded){
               pages[panelIndex].isExpanded = !pages[panelIndex].isExpanded;

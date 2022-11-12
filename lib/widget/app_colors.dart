@@ -3,4 +3,5 @@ import 'package:ck_front_tool_dart/utils/u_color.dart';
 
 class AppColors {
   static Color appBarBackground = UColor.hex("#FFFFFF");
+  static Color  fontColorBlack = Colors.black12;
 }

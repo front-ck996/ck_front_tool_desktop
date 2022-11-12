@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       navigatorObservers: [FlutterSmartDialog.observer],
       builder: FlutterSmartDialog.init(),
       getPages: AppRouter.routers,
+      defaultTransition: Transition.leftToRight,
       initialRoute: AppRouter.pageHome,
     );
   }

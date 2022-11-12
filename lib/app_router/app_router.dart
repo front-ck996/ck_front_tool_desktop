@@ -12,7 +12,7 @@ class AppRouter {
   static List<GetPage>? routers = [
     GetPage(name: pageHome, page: () => const HomePage()),
     GetPage(name: pageExampleStartDialog, page: () => const ExampleSmartDialog()),
-    GetPage(name: pageEditHosts, page: () => const EditHostsPage()),
+    GetPage(name: pageEditHosts, page: () =>  EditHostsPage()),
   ];
 
 }
