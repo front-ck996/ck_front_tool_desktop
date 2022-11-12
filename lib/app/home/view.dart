@@ -1,3 +1,4 @@
+import 'package:ck_front_tool_dart/app_router/app_route_menu.dart';
 import 'package:ck_front_tool_dart/widget/app_logic.dart';
 import 'package:ck_front_tool_dart/widget/app_scaffold.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,8 @@ class HomePage extends StatelessWidget {
             TextButton(onPressed: (){
               final appLogic = Get.find<AppLogic>();
               appLogic.openDrawer();
-            }, child: Text("text dialog"))
+            }, child: Text("text dialog")),
+           AppRouteMenu()
           ],
         ),
     );
