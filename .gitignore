@@ -44,3 +44,4 @@ app.*.map.json
 /android/app/release
 /ext/binary/ck_front_tool_go.h
 /ext/binary/
+/db/

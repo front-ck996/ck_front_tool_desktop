@@ -1,3 +1,4 @@
+import 'package:ck_front_tool_dart/app_router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +13,13 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text("hello"),),
-
+      body: Column(
+        children: [
+          TextButton(onPressed: (){
+            Get.toNamed(AppRouter.pageExampleStartDialog);
+          }, child: Text("text dialog"))
+        ],
+      ),
     );
   }
 }
