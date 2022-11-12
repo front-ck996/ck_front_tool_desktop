@@ -23,26 +23,6 @@ class AppScaffold extends StatelessWidget {
   }
   Widget _fixedDrawer(){
     return Stack(
-      // children: [
-      //   Positioned(
-      //     right: 0,
-      //     child: Container(
-      //       height: 100,
-      //       width: 100,
-      //       color: Colors.red,
-      //       child: Transform.translate(
-      //         offset: Offset(30.0, 0.0),
-      //         child: Container(
-      //           height: 150,
-      //           width: 150,
-      //           color: Colors.blue,
-      //         ),
-      //       ),
-      //     ),
-      //     // child: Container(height: 100,width: 100,color: Colors.red,)
-      //   )
-      //
-      // ],
     );
   }
   Widget _body(){
