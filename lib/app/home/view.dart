@@ -1,5 +1,6 @@
 import 'package:ck_front_tool_dart/app_router/app_route_menu.dart';
 import 'package:ck_front_tool_dart/go_script/go_script.dart';
+import 'package:ck_front_tool_dart/utils/u_toast.dart';
 import 'package:ck_front_tool_dart/widget/app_logic.dart';
 import 'package:ck_front_tool_dart/widget/app_scaffold.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class HomePage extends StatelessWidget {
            ElevatedButton(onPressed: (){
              GoScript.startWebsocket();
              // GoScript.getServePort();
+             UToast.show(GoScript.getServePort().toString());
            }, child: Text('测试获取端口'))
            // AppRouteMenu()
           ],
