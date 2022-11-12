@@ -9,8 +9,8 @@ class UToastParse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _p info = _p.fromJson(jsonDecode(msg));
-    var color;
-    var fillColor;
+    var color = UColor.hex('#FFFFFF');
+    var fillColor = UColor.hex('#000000');
     if (info.mType == _UToastType.message){
       color = UColor.hex('#606266');
       fillColor = UColor.hex('#ffffff');
@@ -34,8 +34,8 @@ class UToastParse extends StatelessWidget {
         border: Border.all(color: color, width: 1),
         color: fillColor,
       ),
-      padding: EdgeInsets.all(15),
-      child: Text(info.msg.toString(), style: TextStyle(color: color,fontSize: 17),),
+      padding: const EdgeInsets.only(top: 5,bottom: 5,left: 15,right: 15),
+      child: Text(info.msg.toString(), style: TextStyle(color: color,fontSize: 16),),
     );
   }
 }
@@ -62,6 +62,10 @@ class _p {
   }
 }
 class UToast {
+  static show(msg){
+    String toastInfo = jsonEncode(_p(msg: msg, mType: '').toJson());
+    SmartDialog.showToast(toastInfo);
+  }
   static message(msg){
     String toastInfo = jsonEncode(_p(msg: msg, mType: _UToastType.message).toJson());
     SmartDialog.showToast(toastInfo);

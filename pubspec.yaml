@@ -103,4 +103,4 @@ ffigen:
   output: 'lib/ffi_binary/ck_front_go_script.dart'
   headers:
     entry-points:
-      - 'ext/binary/ck_front_tool_go.h'
+      - 'assets/dll/ck_front_tool_go.h'

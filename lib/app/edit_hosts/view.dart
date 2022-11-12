@@ -43,17 +43,11 @@ class EditHostsPage extends StatelessWidget {
                       ElevatedButton(
                         child: const Text('提交'),
                         onPressed: (){
-                          UToast.message("hello world");
-                          UToast.primary("hello world");
-                          UToast.info("hello world");
-                          UToast.warn("hello world");
-                          UToast.error("hello world");
-                          // if(LocationFileHost.save(hostData)){
-                          //   SmartDialog.showToast('12324');
-                          //   UToast.message('保存成功');
-                          // }else{
-                          //   UToast.error('保存失败');
-                          // }
+                          if(LocationFileHost.save(hostData)){
+                            UToast.info('保存成功');
+                          }else{
+                            UToast.error('保存失败');
+                          }
                         },
                       )
                     ],

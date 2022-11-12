@@ -1,7 +1,6 @@
-import 'package:ck_front_tool_dart/app_init.dart';
 import 'package:ck_front_tool_dart/app_router/app_router.dart';
+import 'package:ck_front_tool_dart/go_script/go_script.dart';
 import 'package:ck_front_tool_dart/utils/u_toast.dart';
-// import 'package:ck_front_tool_dart/utils/u_toast/toast.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +9,8 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
 void main() {
   Hive.init("db/db.hive");
+  GoScript.init();
+  GoScript.startWebsocket();
   runApp(const MyApp());
 }
 
