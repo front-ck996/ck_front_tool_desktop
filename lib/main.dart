@@ -1,6 +1,9 @@
+import 'package:ck_front_tool_dart/app_init.dart';
+import 'package:ck_front_tool_dart/utils/location_file_host.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
 void main() {
   Hive.init("db/db.hive");
@@ -13,6 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorObservers: [FlutterSmartDialog.observer],
+      builder: AppInit.builder(),
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -25,11 +30,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   MyHomePage({super.key, required this.title});
 
-
-
   final String title;
-
-
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -66,6 +67,10 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            FloatingActionButton(onPressed: () async {
+              var fData = await LocationFileHost.getHostData();
+              print(fData);
+            },child: Text('获取hosts文件'),)
           ],
         ),
       ),

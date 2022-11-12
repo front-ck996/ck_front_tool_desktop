@@ -39,6 +39,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   hive: ^2.2.3
   shared_preferences: ^2.0.15
+  code_editor: ^1.3.2
+  flutter_smart_dialog: ^4.7.0+1
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:
@@ -96,7 +99,7 @@ flutter:
 ffigen:
   name: CkFrontGoScript
   description: Bindings to `headers/example.h`.
-  output: 'lib/dll/ck_front_go_script.dart'
+  output: 'lib/ffi_binary/ck_front_go_script.dart'
   headers:
     entry-points:
-      - 'assets/dll/ck_front_tool_go.h'
+      - 'ext/binary/ck_front_tool_go.h'
