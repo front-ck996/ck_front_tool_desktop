@@ -10,6 +10,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final logic = Get.put(HomeLogic());
 
-    return Container();
+    return Scaffold(
+      appBar: AppBar(title: Text("hello"),),
+
+    );
   }
 }

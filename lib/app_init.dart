@@ -1,10 +1,10 @@
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 class AppInit{
-  init(){
-    // navigatorObservers: [FlutterSmartDialog.observer],
+  init() async  {
 
   }
   static builder(){
+    // navigatorObservers: [FlutterSmartDialog.observer],
     FlutterSmartDialog.init();
   }
 }

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 class AppRouter {
   static String pageHome = "/";
-  List<GetPage> routers = [
+  static List<GetPage>? routers = [
     GetPage(name: pageHome, page: () => const HomePage())
   ];
 }
