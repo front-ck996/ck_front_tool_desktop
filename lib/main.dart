@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       navigatorObservers: [FlutterSmartDialog.observer],
       builder: FlutterSmartDialog.init(),
-      // builder: AppInit.builder(),
       getPages: AppRouter.routers,
       initialRoute: AppRouter.pageHome,
     );

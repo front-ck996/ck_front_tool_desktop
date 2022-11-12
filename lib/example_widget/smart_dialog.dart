@@ -9,14 +9,18 @@ class ExampleSmartDialog extends StatefulWidget {
 }
 
 class _ExampleSmartDialogState extends State<ExampleSmartDialog> {
+  final stateKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // key: stateKey,
+      drawer: Drawer(),
       body: Column(
         children: [
           TextButton(onPressed: (){
+            // stateKey.currentState!.openDrawer();
             // SmartDialog.showToast("default", displayType: SmartToastType.last);
-            SmartDialog.showLoading(clickMaskDismiss: true);
+            // SmartDialog.showLoading(clickMaskDismiss: true);
           }, child: Text('default'))
         ],
       ),
