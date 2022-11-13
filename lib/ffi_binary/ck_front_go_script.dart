@@ -894,13 +894,15 @@ class CkFrontGoScript {
   late final _SleepPrint =
       _SleepPrintPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  void hello_world() {
-    return _hello_world();
+  ffi.Pointer<ffi.Char> GetRowGithubusercontentComIps() {
+    return _GetRowGithubusercontentComIps();
   }
 
-  late final _hello_worldPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function()>>('hello_world');
-  late final _hello_world = _hello_worldPtr.asFunction<void Function()>();
+  late final _GetRowGithubusercontentComIpsPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
+          'GetRowGithubusercontentComIps');
+  late final _GetRowGithubusercontentComIps = _GetRowGithubusercontentComIpsPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function()>();
 }
 
 typedef va_list = ffi.Pointer<ffi.Char>;

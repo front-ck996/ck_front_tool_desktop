@@ -1,12 +1,13 @@
 import 'dart:ffi' as ffi;
 import 'package:ck_front_tool_dart/ffi_binary/ck_front_go_script.dart';
+import 'package:ck_front_tool_dart/utils/raw_fithubusercontent_cpm_ips.dart';
 import 'package:ffi/ffi.dart';
 
 import 'package:path/path.dart' as path;
 import 'dart:io' show Directory;
 class GoScript {
   static String libraryPath = path.join(Directory.current.path, 'ext', 'binary' ,'ck_front_tool_go.dll');
-  static var goScriptHandle;
+  static late CkFrontGoScript goScriptHandle;
 
   static init(){
     goScriptHandle = CkFrontGoScript(ffi.DynamicLibrary.open(libraryPath));
@@ -23,5 +24,8 @@ class GoScript {
 
   static int getServePort(){
     return goScriptHandle.GetServePort();
+  }
+  static RawGithubusercontentComIps getRawGithubusercontentComIps(){
+    return RawGithubusercontentComIps.run();
   }
 }

@@ -11,6 +11,7 @@ void main() {
   Hive.init("db/db.hive");
   GoScript.init();
   GoScript.startWebsocket();
+  // UToast.closeLoading();
   runApp(const MyApp());
 }
 

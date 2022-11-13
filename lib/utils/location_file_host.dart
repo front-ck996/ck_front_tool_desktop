@@ -1,8 +1,12 @@
 import 'dart:io';
+import 'dart:isolate';
 
+import 'package:ck_front_tool_dart/go_script/go_script.dart';
 import 'package:ck_front_tool_dart/utils/print_process_result.dart';
+import 'package:ck_front_tool_dart/utils/raw_fithubusercontent_cpm_ips.dart';
 import 'package:ck_front_tool_dart/utils/u_toast.dart';
 class LocationFileHost {
+  static Isolate? _isolate;
   static String filePath = 'c:\\windows\\system32\\drivers\\etc\\hosts';
   static getHostData() async {
     var file = File(filePath);
@@ -29,5 +33,45 @@ class LocationFileHost {
         UToast.show(printProcessResult(runSync.stdout));
       }
     }
+  }
+
+
+
+ static void entryPoint(SendPort sendPort) {
+    RawGithubusercontentComIps data = GoScript.getRawGithubusercontentComIps();
+    sendPort.send(data);
+  }
+
+  ///  调用脚本并将结果写入本地 hosts 文件
+  static updateRowGithubComAndWriteHosts() async {
+
+    if(_isolate != null){
+      _isolate!.kill();
+    }
+
+    UToast.openLoading();
+    final receiver = ReceivePort();
+    receiver.listen((data) async {
+      data = data as RawGithubusercontentComIps;
+      UToast.closeLoading();
+      String hostData = await getHostData();
+      RegExp regex = RegExp(r'##CkFrontRawGithub Start##([\s\S]*)##CkFrontRawGithub End##');
+      var s =  regex.stringMatch(hostData);
+      var nlist = data.ips.map((e) => '$e raw.githubusercontent.com').toList();
+      var ns = ['##CkFrontRawGithub Start##',...nlist,'##CkFrontRawGithub End##'].join('\n');
+      if(s != null){
+        hostData = hostData.replaceAll(regex, ns);
+      }else{
+        hostData += "\n\n\n$ns";
+      }
+      save(hostData);
+      if(!data.isok){
+        UToast.error('获取ip失败');
+        return;
+      }
+      UToast.show(data.ips.join('\n'));
+    });
+    Isolate isolate = await Isolate.spawn(entryPoint, receiver.sendPort);
+    _isolate = isolate;
   }
 }

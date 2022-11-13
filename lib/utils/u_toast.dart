@@ -86,4 +86,12 @@ class UToast {
     String toastInfo = jsonEncode(_p(msg: msg, mType: _UToastType.error).toJson());
     SmartDialog.showToast(toastInfo);
   }
+
+
+  static openLoading() async {
+    await SmartDialog.showLoading(msg: '加载中...',);
+  }
+  static closeLoading() async {
+    await SmartDialog.dismiss(status: SmartStatus.loading);
+  }
 }

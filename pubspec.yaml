@@ -43,6 +43,7 @@ dependencies:
   flutter_smart_dialog: ^4.7.0+1
   get: ^4.6.5
   provider: ^6.0.4
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:
@@ -103,4 +104,4 @@ ffigen:
   output: 'lib/ffi_binary/ck_front_go_script.dart'
   headers:
     entry-points:
-      - 'assets/dll/ck_front_tool_go.h'
+      - 'ext/binary/ck_front_tool_go.h'
