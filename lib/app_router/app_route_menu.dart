@@ -1,19 +1,23 @@
-import 'package:ck_front_tool_dart/app_router/app_router.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
+
+import 'package:ck_front_tool_dart/app_router/app_router.dart';
 
 class AppRouterMenuItem {
   String routeName;
   String routePath;
   List<AppRouterMenuItem>? children;
   bool isExpanded = false;
+
   AppRouterMenuItem({required this.routeName, required this.routePath, this.children});
 }
 
 
 
 class AppRouteMenu extends StatefulWidget {
-  const AppRouteMenu({Key? key}) : super(key: key);
+  Function? onPush;
+  AppRouteMenu({Key? key, this.onPush}) : super(key: key);
 
   @override
   State<AppRouteMenu> createState() => _AppRouteMenuState();
@@ -24,12 +28,6 @@ class _AppRouteMenuState extends State<AppRouteMenu> {
     AppRouterMenuItem(routeName: "basic tool", routePath: "",
       children: [
         AppRouterMenuItem(routeName: "编辑本地hosts文件", routePath: AppRouter.pageEditHosts),
-        // AppRouterMenuItem(routeName: "编辑本地hosts文件", routePath: AppRouter.pageEditHosts),
-        // AppRouterMenuItem(routeName: "编辑本地hosts文件", routePath: AppRouter.pageEditHosts),
-        // AppRouterMenuItem(routeName: "编辑本地hosts文件", routePath: AppRouter.pageEditHosts),
-        // AppRouterMenuItem(routeName: "编辑本地hosts文件", routePath: AppRouter.pageEditHosts),
-        // AppRouterMenuItem(routeName: "编辑本地hosts文件", routePath: AppRouter.pageEditHosts),
-        // AppRouterMenuItem(routeName: "编辑本地hosts文件", routePath: AppRouter.pageEditHosts),
       ]
     )
   ];
@@ -70,6 +68,10 @@ class _AppRouteMenuState extends State<AppRouteMenu> {
                 title: Text(e.routeName),
                 onTap: (){
                   Get.toNamed(e.routePath);
+                  if(widget.onPush != null){
+                    widget.onPush!(e);
+                  }
+
                 },
               ),
              )

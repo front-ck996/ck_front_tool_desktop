@@ -58,7 +58,7 @@ class LocationFileHost {
       RegExp regex = RegExp(r'##CkFrontRawGithub Start##([\s\S]*)##CkFrontRawGithub End##');
       var s =  regex.stringMatch(hostData);
       var nlist = data.ips.map((e) => '$e raw.githubusercontent.com').toList();
-      var ns = ['##CkFrontRawGithub Start##',...nlist,'##CkFrontRawGithub End##'].join('\n');
+      var ns = ['\n##CkFrontRawGithub Start##',...nlist,'##CkFrontRawGithub End##\n'].join('\n');
       if(s != null){
         hostData = hostData.replaceAll(regex, ns);
       }else{

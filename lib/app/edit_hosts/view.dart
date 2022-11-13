@@ -1,12 +1,10 @@
+import 'package:flutter/material.dart';
+
 import 'package:ck_front_tool_dart/utils/loading_fit_fill.dart';
 import 'package:ck_front_tool_dart/utils/location_file_host.dart';
-import 'package:ck_front_tool_dart/utils/u_color.dart';
 import 'package:ck_front_tool_dart/utils/u_toast.dart';
-// import 'package:ck_front_tool_dart/utils/u_toast.dart';
 import 'package:ck_front_tool_dart/widget/app_basic_container.dart';
 import 'package:ck_front_tool_dart/widget/app_scaffold.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
 class EditHostsPage extends StatelessWidget {
   late String hostData;
@@ -19,7 +17,7 @@ class EditHostsPage extends StatelessWidget {
       builder: (BuildContext context, BoxConstraints constraints,AsyncSnapshot<String> snapshot){
         if( snapshot.connectionState == ConnectionState.done){
           hostData = snapshot.data.toString();
-          return AppScaffold(body: Container(
+          return AppScaffold(title: '修改本地hosts文件',body: Container(
             // color: Colors.red,
             child: Stack(
               children: [
@@ -58,7 +56,7 @@ class EditHostsPage extends StatelessWidget {
             ),
           ));
         }
-        return AppScaffold(body: const LoadingFitFill());
+        return AppScaffold(title: 'loading' ,body: const LoadingFitFill());
       }
     );
   }
