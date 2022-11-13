@@ -54,7 +54,7 @@ class _AppScaffoldState extends State<AppScaffold> {
       },
       child: const SizedBox( width: 50, child: Icon(Icons.menu_open_outlined),),
     ));
-    // print(NavigationHistoryObserver().history);
+    print('------------ ${NavigationHistoryObserver().history.length}');
     if (NavigationHistoryObserver().history.length > 1){
       icons.add(GestureDetector(
         onTap: (){
@@ -66,7 +66,7 @@ class _AppScaffoldState extends State<AppScaffold> {
     if (Get.currentRoute != AppRouter.pageHome){
       icons.add(GestureDetector(
         onTap: (){
-          Get.offAndToNamed(AppRouter.pageHome,);
+          AppRouter.toHome();
         },
         child: const SizedBox( width: 50, child: Icon(Icons.home_outlined),),
       ));
@@ -78,7 +78,7 @@ class _AppScaffoldState extends State<AppScaffold> {
         const SizedBox(height: 20,),
         GestureDetector(
           onTap: (){
-            Get.offAndToNamed(AppRouter.pageHome);
+            AppRouter.toHome();
           },
           child: Container(
             alignment: Alignment.center,

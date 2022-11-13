@@ -14,5 +14,7 @@ class AppRouter {
     GetPage(name: pageExampleStartDialog, page: () => const ExampleSmartDialog()),
     GetPage(name: pageEditHosts, page: () =>  EditHostsPage()),
   ];
-
+  static toHome(){
+    Get.offAllNamed(pageHome);
+  }
 }
