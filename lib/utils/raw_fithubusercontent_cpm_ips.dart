@@ -5,9 +5,7 @@ import 'package:path/path.dart' as path;
 class RawGithubusercontentComIps {
   late List<String> ips;
   late bool isok;
-  RawGithubusercontentComIps({required this.ips, required this.isok}){
-
-  }
+  RawGithubusercontentComIps({required this.ips, required this.isok});
   static RawGithubusercontentComIps run() {
     var exePath = path.absolute('ext/exe/getRawIps.exe');
     var p = Process.runSync(exePath, []);

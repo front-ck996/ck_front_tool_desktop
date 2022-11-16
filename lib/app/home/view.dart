@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'dart:io';
 
 import 'package:ck_front_tool_dart/go_script/go_script.dart';
 import 'package:ck_front_tool_dart/utils/location_file_host.dart';
@@ -30,6 +31,12 @@ class HomePage extends StatelessWidget {
               LocationFileHost.updateRowGithubComAndWriteHosts();
 
             }, child: Text('测试 row ips ')),
+
+            ElevatedButton(onPressed: () async {
+              // LocationFileHost.updateRowGithubComAndWriteHosts();
+              print(Platform.environment);
+            }, child: Text('测试 row ips ')),
+
            // AppRouteMenu()
           ],
         ),

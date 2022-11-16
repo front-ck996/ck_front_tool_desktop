@@ -25,11 +25,16 @@ class AppRouteMenu extends StatefulWidget {
 
 class _AppRouteMenuState extends State<AppRouteMenu> {
   List<AppRouterMenuItem> pages = [
-    AppRouterMenuItem(routeName: "basic tool", routePath: "",
+    AppRouterMenuItem(routeName: "基本工具", routePath: "",
       children: [
         AppRouterMenuItem(routeName: "编辑本地hosts文件", routePath: AppRouter.pageEditHosts),
       ]
-    )
+    ),
+    AppRouterMenuItem(routeName: "便捷开发", routePath: "",
+        children: [
+          AppRouterMenuItem(routeName: "Mock&&WatchUrl", routePath: AppRouter.pageMockAndWatchUrl),
+        ]
+    ),
   ];
 
   @override
@@ -49,7 +54,9 @@ class _AppRouteMenuState extends State<AppRouteMenu> {
 
    List<ExpansionPanelList> wList = [];
     if(tree.isNotEmpty){
-      for (var element in tree) {
+
+      for (var index = 0; index < tree.length; index++) {
+        AppRouterMenuItem element = tree[index];
         // 没有子集
         if(element.children == null || element.children!.isEmpty){
 
@@ -71,16 +78,14 @@ class _AppRouteMenuState extends State<AppRouteMenu> {
                   if(widget.onPush != null){
                     widget.onPush!(e);
                   }
-
                 },
               ),
              )
           ).toList();
           wList.add(ExpansionPanelList(
-
             children: cList,
             expansionCallback:(int panelIndex, bool isExpanded){
-              pages[panelIndex].isExpanded = !pages[panelIndex].isExpanded;
+              element.isExpanded = !element.isExpanded;
               setState(() {});
             }
           ));
