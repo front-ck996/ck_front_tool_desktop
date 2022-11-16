@@ -1,17 +1,36 @@
+import 'package:ck_front_tool_dart/model/model_mock.dart';
+import 'package:ck_front_tool_dart/utils/u_store.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MockAndWatchApiLogic extends GetxController{
   late TabController tabController;
+  final mockList = <ModelMock>[].obs;
+  loadMockConfigList(){
+     List<ModelMock> l =  [];
+     final list  = UStore.get("mock_list");
+     if(list.isNotEmpty){
+       list.forEach((element){
+         print(element);
+         l.add(element);
+       });
+
+       // mockList.value = list as List<ModelMock>;
+     }else{
+       mockList.value = [];
+     }
+     mockList.value = l;
+  }
+
   @override
   void onReady() {
-    // TODO: implement onReady
+   loadMockConfigList();
     super.onReady();
   }
 
   @override
   void onClose() {
-    // TODO: implement onClose
+    print('close');
     super.onClose();
   }
 }

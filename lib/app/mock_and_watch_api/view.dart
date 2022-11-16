@@ -1,4 +1,5 @@
 
+import 'package:ck_front_tool_dart/model/model_mock.dart';
 import 'package:ck_front_tool_dart/widget/app_basic_container.dart';
 import 'package:ck_front_tool_dart/widget/app_scaffold.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +15,8 @@ const List<Tab> tabs = <Tab>[
 ];
 
 class MockAndWatchApiPage extends StatelessWidget{
-  const MockAndWatchApiPage({Key? key}) : super(key: key);
-
+  MockAndWatchApiPage({Key? key}) : super(key: key);
+  final logic = Get.put(MockAndWatchApiLogic());
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +24,17 @@ class MockAndWatchApiPage extends StatelessWidget{
       title: "MockAndWatchUrl",
       body: AppBasicContainer(
         builder: (BuildContext context,BoxConstraints constraints, AsyncSnapshot snapshot){
-          return Container(padding: const EdgeInsets.all(20), child:Column(
+          return Container(padding: const EdgeInsets.all(20), child: Obx( () => Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children:  [
+                children: const [
                   MockAndWatchApiPageAddComponent(),
                 ],
-              )
+              ),
+              ...logic.mockList.map(( ModelMock element) => Container(child: Text(element.firstDomain.toString()),)).toList()
             ],
-          ));
+          )));
        }
       )
     );

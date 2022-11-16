@@ -15,7 +15,7 @@ class AppRouter {
     GetPage(name: pageHome, page: () => const HomePage()),
     GetPage(name: pageExampleStartDialog, page: () => const ExampleSmartDialog()),
     GetPage(name: pageEditHosts, page: () =>  EditHostsPage()),
-    GetPage(name: pageMockAndWatchUrl, page: () =>  const MockAndWatchApiPage()),
+    GetPage(name: pageMockAndWatchUrl, page: () =>   MockAndWatchApiPage()),
   ];
   static toHome(){
     Get.offAllNamed(pageHome);

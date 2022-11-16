@@ -1,4 +1,6 @@
+import 'package:ck_front_tool_dart/model/model_mock.dart';
 import 'package:ck_front_tool_dart/utils/u_store.dart';
+import 'package:ck_front_tool_dart/utils/u_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
@@ -11,7 +13,7 @@ class MockAndWatchApiPageAddComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final logic = Get.put(MockAndWatchApiPageAddLogic());
-
+    ModelMock mockData = ModelMock();
     return FloatingActionButton(onPressed: (){
       SmartDialog.show(clickMaskDismiss: false,builder: (BuildContext context){
         return FractionallySizedBox(
@@ -28,6 +30,9 @@ class MockAndWatchApiPageAddComponent extends StatelessWidget {
                         decoration: const InputDecoration(
                           labelText: '前置标记'
                         ),
+                        onChanged: (value){
+                          mockData.firstDomain = value;
+                        },
                       )
                     ],
                   ),
@@ -36,10 +41,9 @@ class MockAndWatchApiPageAddComponent extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(onPressed: () async {
-                      await UStore.add("a", "a");
-                      await UStore.update("a", "a2");
-                      print(UStore.get("a"));
-                      print(await UStore.delete("a999"));
+                      await logic.submit(mockData);
+                      mockData = ModelMock();
+                      SmartDialog.dismiss();
                     }, child: Container(child: Text('提交'),)),
                     TextButton(onPressed: (){
                       SmartDialog.dismiss();

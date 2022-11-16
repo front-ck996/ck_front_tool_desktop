@@ -1,3 +1,4 @@
+import 'package:ck_front_tool_dart/model/model_mock.dart';
 import 'package:hive/hive.dart';
 
 class UStore {
@@ -5,7 +6,11 @@ class UStore {
 
   static init() async {
     Hive.init("db/db.hive");
+    Hive.registerAdapter(ModelMockAdapter());
     boxHandle = await Hive.openBox("db0");
+  }
+  static Box getBox(){
+    return boxHandle;
   }
 
   // add 需保证原始数据不存在
@@ -46,7 +51,7 @@ class UStore {
     return true;
   }
 
-  static get(key) {
+   static T get<T>(key) {
     return boxHandle.get(key);
   }
 
