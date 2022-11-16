@@ -45,3 +45,4 @@ app.*.map.json
 /ext/binary/ck_front_tool_go.h
 /ext/binary/
 /db/
+/ext/exe/

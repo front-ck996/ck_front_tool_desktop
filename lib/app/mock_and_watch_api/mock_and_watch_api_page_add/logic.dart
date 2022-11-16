@@ -6,14 +6,14 @@ import 'package:get/get.dart';
 class MockAndWatchApiPageAddLogic extends GetxController {
   submit(ModelMock data) async {
     List<ModelMock> l =  [];
-    final list  = UStore.get("mock_list");
-    if(list.isNotEmpty) {
-      list.forEach((element) {
+    try{
+      final list  = UStore.get("mock_list");
+      list.forEach((element){
         l.add(element);
       });
-    }
+    }catch(e){}
     l.add(data);
-    await UStore.update("mock_list", l);
+    await UStore.addOrUpdate("mock_list", l);
     final mockLogic =  Get.find<MockAndWatchApiLogic>();
     mockLogic.loadMockConfigList();
   }

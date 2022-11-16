@@ -8,15 +8,15 @@ class MockAndWatchApiLogic extends GetxController{
   final mockList = <ModelMock>[].obs;
   loadMockConfigList(){
      List<ModelMock> l =  [];
-     final list  = UStore.get("mock_list");
-     if(list.isNotEmpty){
+     try{
+       final list  = UStore.get("mock_list");
        list.forEach((element){
          l.add(element);
        });
-     }else{
+       mockList.value = l;
+     }catch(e){
        mockList.value = [];
      }
-     mockList.value = l;
   }
 
   @override
