@@ -1,3 +1,4 @@
+import 'package:ck_front_tool_dart/utils/u_store.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -10,7 +11,7 @@ import 'package:ck_front_tool_dart/go_script/go_script.dart';
 import 'package:ck_front_tool_dart/utils/u_toast.dart';
 
 void main() {
-  Hive.init("db/db.hive");
+  UStore.init();
   GoScript.init();
   GoScript.startWebsocket();
   runApp(const MyApp());
