@@ -1,9 +1,11 @@
 import 'package:hive/hive.dart';
 
 
+
 class ModelMock {
+  String? title;
   String? firstDomain;
-  ModelMock({this.firstDomain});
+  ModelMock({this.title,this.firstDomain});
 }
 
 class ModelMockAdapter extends TypeAdapter<ModelMock>{

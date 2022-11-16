@@ -1,7 +1,8 @@
-
 import 'package:ck_front_tool_dart/model/model_mock.dart';
 import 'package:ck_front_tool_dart/widget/app_basic_container.dart';
 import 'package:ck_front_tool_dart/widget/app_scaffold.dart';
+import 'package:ck_front_tool_dart/widget/cui_tag.dart';
+import 'package:ck_front_tool_dart/widget/cui_tag_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,11 +33,18 @@ class MockAndWatchApiPage extends StatelessWidget{
                   MockAndWatchApiPageAddComponent(),
                 ],
               ),
-              ...logic.mockList.map(( ModelMock element) => Container(child: Text(element.firstDomain.toString()),)).toList()
+              CuiTag(children: _tags())
             ],
           )));
        }
       )
     );
+  }
+  _tags(){
+    var list = <Widget>[];
+    logic.mockList.forEach((ModelMock element) {
+      list.add(CuiTagItem(title: element.firstDomain.toString()));
+    });
+    return list;
   }
 }

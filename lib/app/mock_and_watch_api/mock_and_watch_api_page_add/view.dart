@@ -28,6 +28,14 @@ class MockAndWatchApiPageAddComponent extends StatelessWidget {
                     children: [
                       TextFormField(
                         decoration: const InputDecoration(
+                            labelText: 'mock任务标题'
+                        ),
+                        onChanged: (value){
+                          mockData.firstDomain = value;
+                        },
+                      ),
+                      TextFormField(
+                        decoration: const InputDecoration(
                           labelText: '前置标记'
                         ),
                         onChanged: (value){
@@ -44,10 +52,10 @@ class MockAndWatchApiPageAddComponent extends StatelessWidget {
                       await logic.submit(mockData);
                       mockData = ModelMock();
                       SmartDialog.dismiss();
-                    }, child: Container(child: Text('提交'),)),
+                    }, child: Text('提交')),
                     TextButton(onPressed: (){
                       SmartDialog.dismiss();
-                    }, child: Container(child: Text('关闭'),))
+                    }, child: Text('关闭'))
                   ],
                 )
               ],
