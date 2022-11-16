@@ -1,8 +1,8 @@
 import 'package:ck_front_tool_dart/model/model_mock.dart';
 import 'package:ck_front_tool_dart/widget/app_basic_container.dart';
 import 'package:ck_front_tool_dart/widget/app_scaffold.dart';
-import 'package:ck_front_tool_dart/widget/cui_tag.dart';
-import 'package:ck_front_tool_dart/widget/cui_tag_item.dart';
+import 'package:ck_front_tool_dart/cui/cui_tag.dart';
+import 'package:ck_front_tool_dart/cui/cui_tag_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
