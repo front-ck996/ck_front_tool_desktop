@@ -43,7 +43,12 @@ class MockAndWatchApiPage extends StatelessWidget{
   _tags(){
     var list = <Widget>[];
     logic.mockList.forEach((ModelMock element) {
-      list.add(CuiTagItem(title: element.firstDomain.toString()));
+      list.add(CuiTagItem(
+        title: element.title.toString(),
+        onDelete: (){
+          
+        },
+      ));
     });
     return list;
   }

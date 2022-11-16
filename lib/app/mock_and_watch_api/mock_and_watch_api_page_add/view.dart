@@ -31,7 +31,7 @@ class MockAndWatchApiPageAddComponent extends StatelessWidget {
                             labelText: 'mock任务标题'
                         ),
                         onChanged: (value){
-                          mockData.firstDomain = value;
+                          mockData.title = value;
                         },
                       ),
                       TextFormField(
