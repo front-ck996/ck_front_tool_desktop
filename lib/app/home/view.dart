@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:io';
 
-import 'package:ck_front_tool_dart/go_script/go_script.dart';
+// import 'package:ck_front_tool_dart/ffi_binary/go_script.dart';
 import 'package:ck_front_tool_dart/utils/location_file_host.dart';
 import 'package:ck_front_tool_dart/utils/u_toast.dart';
 import 'package:ck_front_tool_dart/widget/app_scaffold.dart';
@@ -23,8 +23,8 @@ class HomePage extends StatelessWidget {
             TextButton(onPressed: (){
             }, child: Text("text dialog")),
            ElevatedButton(onPressed: (){
-             GoScript.startWebsocket();
-             UToast.show(GoScript.getServePort().toString());
+             // GoScript.startWebsocket();
+             // UToast.show(GoScript.getServePort().toString());
            }, child: Text('测试获取端口')),
 
 

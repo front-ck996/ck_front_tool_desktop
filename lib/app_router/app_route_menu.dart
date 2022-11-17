@@ -28,6 +28,7 @@ class _AppRouteMenuState extends State<AppRouteMenu> {
     AppRouterMenuItem(routeName: "基本工具", routePath: "",
       children: [
         AppRouterMenuItem(routeName: "编辑本地hosts文件", routePath: AppRouter.pageEditHosts),
+        AppRouterMenuItem(routeName: "查找整个磁盘大文件", routePath: AppRouter.pageWalkDir),
       ]
     ),
     AppRouterMenuItem(routeName: "便捷开发", routePath: "",

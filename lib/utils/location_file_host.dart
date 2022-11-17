@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:isolate';
 
-import 'package:ck_front_tool_dart/go_script/go_script.dart';
+// import 'package:ck_front_tool_dart/ffi_binary/go_script.dart';
 import 'package:ck_front_tool_dart/utils/print_process_result.dart';
 import 'package:ck_front_tool_dart/utils/raw_fithubusercontent_cpm_ips.dart';
 import 'package:ck_front_tool_dart/utils/u_toast.dart';
@@ -37,8 +37,8 @@ class LocationFileHost {
 
 
  static void entryPoint(SendPort sendPort) {
-    RawGithubusercontentComIps data = GoScript.getRawGithubusercontentComIps();
-    sendPort.send(data);
+    // RawGithubusercontentComIps data = GoScript.getRawGithubusercontentComIps();
+    // sendPort.send(data);
   }
   ///  调用脚本并将结果写入本地 hosts 文件
   static updateRowGithubComAndWriteHosts() async {

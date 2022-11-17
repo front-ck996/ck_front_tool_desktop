@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "ck_front_tool_dart" "\0"
+            VALUE "FileDescription", "ck_tool_proto_flutter" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "ck_front_tool_dart" "\0"
+            VALUE "InternalName", "ck_tool_proto_flutter" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "ck_front_tool_dart.exe" "\0"
-            VALUE "ProductName", "ck_front_tool_dart" "\0"
+            VALUE "OriginalFilename", "ck_tool_proto_flutter.exe" "\0"
+            VALUE "ProductName", "ck_tool_proto_flutter" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
