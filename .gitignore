@@ -46,3 +46,4 @@ app.*.map.json
 /ext/binary/
 /db/
 /ext/exe/
+/ext/

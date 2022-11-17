@@ -33,6 +33,7 @@ class _AppRouteMenuState extends State<AppRouteMenu> {
     AppRouterMenuItem(routeName: "便捷开发", routePath: "",
         children: [
           AppRouterMenuItem(routeName: "Mock&&WatchUrl", routePath: AppRouter.pageMockAndWatchUrl),
+          AppRouterMenuItem(routeName: "mysql8.0.23社区版", routePath: AppRouter.pageSmallMysql),
         ]
     ),
   ];
