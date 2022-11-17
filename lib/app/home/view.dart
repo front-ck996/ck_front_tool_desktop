@@ -1,3 +1,4 @@
+import 'package:ck_front_tool_dart/app_router/app_route_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:io';
@@ -37,7 +38,22 @@ class HomePage extends StatelessWidget {
               print(Platform.environment);
             }, child: Text('测试 row ips ')),
 
-           // AppRouteMenu()
+            ExpansionPanelList(
+              children: [
+                ExpansionPanel(isExpanded: true,headerBuilder:(BuildContext context, bool isExpanded){
+                      return ListTile(
+                      title: Text('hello'),
+                      );
+                      },
+                    body: Container(
+
+                    ))
+              ],
+            ),
+
+            // AppRouteMenu(onPush: (e){
+            //   // stateKey.currentState!.openEndDrawer();
+            // },),
           ],
         ),
     );

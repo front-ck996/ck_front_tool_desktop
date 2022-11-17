@@ -32,18 +32,18 @@ class _AppScaffoldState extends State<AppScaffold> {
 
   @override
   Widget build(BuildContext context) {
-          return Scaffold(
-        key: stateKey,
-        appBar: AppBar(
-          title: Text(widget.title),
-          leading: Row( children: icons,),
-          leadingWidth: icons.length * 50,
-        ),
-        drawer: Drawer(
-          child: _fixedDrawer(),
-        ),
-        body: _body(),
-      );
+    return Scaffold(
+      key: stateKey,
+      appBar: AppBar(
+        title: Text(widget.title),
+        leading: Row( children: icons,),
+        leadingWidth: icons.length * 50,
+      ),
+      drawer: Drawer(
+        child: _fixedDrawer(),
+      ),
+      body: _body(),
+    );
   }
 
   renderLeading(){

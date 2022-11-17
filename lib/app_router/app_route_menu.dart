@@ -64,27 +64,33 @@ class _AppRouteMenuState extends State<AppRouteMenu> {
         }
         // 有子集
         else{
-          List<ExpansionPanel> cList = element.children!.map((AppRouterMenuItem  e) => ExpansionPanel(
-              headerBuilder: (BuildContext context, bool isExpanded){
-                return ListTile(
-                  title: Text(element.routeName),
-                );
-              },
-              canTapOnHeader: true,
-              isExpanded: element.isExpanded,
-              body:  ListTile(
-                title: Text(e.routeName),
-                onTap: (){
-                  Get.toNamed(e.routePath);
-                  if(widget.onPush != null){
-                    widget.onPush!(e);
-                  }
-                },
-              ),
-             )
-          ).toList();
+
+          List<Widget> cList = element.children!.map((AppRouterMenuItem  e) => ListTile(
+            title: Text(e.routeName),
+            onTap: (){
+              Get.toNamed(e.routePath);
+              if(widget.onPush != null){
+                widget.onPush!(e);
+              }
+            },
+          )).toList();
+
+
           wList.add(ExpansionPanelList(
-            children: cList,
+            children: [
+              ExpansionPanel(
+                  isExpanded: element.isExpanded,
+                  canTapOnHeader: true,
+                  headerBuilder: (BuildContext context, bool isExpanded){
+                    return ListTile(
+                      title: Text(element.routeName),
+                    );
+                  },
+                  body: Column(
+                    children: cList,
+                  )
+              ),
+            ],
             expansionCallback:(int panelIndex, bool isExpanded){
               element.isExpanded = !element.isExpanded;
               setState(() {});
