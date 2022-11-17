@@ -1,14 +1,12 @@
-import 'package:ck_front_tool_dart/utils/u_store.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:navigation_history_observer/navigation_history_observer.dart';
 
 import 'package:ck_front_tool_dart/app_router/app_router.dart';
 import 'package:ck_front_tool_dart/utils/u_toast.dart';
-
+import 'package:ck_front_tool_dart/utils/u_store.dart';
 void main() {
   UStore.init();
   runApp(const MyApp());

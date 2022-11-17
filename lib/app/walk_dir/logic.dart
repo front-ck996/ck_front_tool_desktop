@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 
 class WalkDirLogic extends GetxController {
+
+  final f = ''.obs;
+
   @override
   void onReady() {
     // TODO: implement onReady

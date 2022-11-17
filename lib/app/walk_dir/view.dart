@@ -1,12 +1,10 @@
-import 'dart:ffi';
-import 'dart:math';
-
-// import 'package:ck_front_tool_dart/ffi_binary/go_script.dart';
+import 'package:ck_front_tool_dart/grpc/core/walk_disk.pbgrpc.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grpc/grpc.dart';
 import '../../widget/app_basic_container.dart';
 import '../../widget/app_scaffold.dart';
-import 'package:ffi/ffi.dart' as ffi;
+import 'package:ck_front_tool_dart/grpc/handle.dart';
 import 'logic.dart';
 // typedef callBack  Pointer<Void> NativeFunction(Pointer<Char> log);
 typedef VoidCallback =  void Function(String log);
@@ -24,12 +22,13 @@ class WalkDirPage extends StatelessWidget {
               return Container(padding: const EdgeInsets.all(20), child:Column(
                 children: [
                   FloatingActionButton(onPressed: (){
-                    // GoScript.goScriptHandle.WalkDisk("c:")
-                    // Callback c ;
-                    // GoScript.walkDisk("c:", (Pointer<Char> log){
-                    //
-                    // });
-                  }, child: Icon(Icons.add_circle),)
+                    ResponseStream  res =  UGrpcHandle.getHandle().walkDisk(RequestWalkDisk(disk: "c:"));
+                    res.listen((value) {
+                      logic.f.value = (value as ResponseWalkDisk).file;
+                    });
+                  }, child: Icon(Icons.add_circle),),
+                  SizedBox(height: 10,),
+                  Obx(() => Text(logic.f.value))
                 ],
               ));
             }
