@@ -41,6 +41,14 @@ class MockAndWatchApiPageAddComponent extends StatelessWidget {
                         onChanged: (value){
                           mockData.firstDomain = value;
                         },
+                      ),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                            labelText: '代理地址'
+                        ),
+                        onChanged: (value){
+                          mockData.proxyUrl = value;
+                        },
                       )
                     ],
                   ),

@@ -36,12 +36,10 @@ class LocationFileHost {
   }
 
 
-
  static void entryPoint(SendPort sendPort) {
     RawGithubusercontentComIps data = GoScript.getRawGithubusercontentComIps();
     sendPort.send(data);
   }
-
   ///  调用脚本并将结果写入本地 hosts 文件
   static updateRowGithubComAndWriteHosts() async {
 
@@ -73,5 +71,25 @@ class LocationFileHost {
     });
     Isolate isolate = await Isolate.spawn(entryPoint, receiver.sendPort);
     _isolate = isolate;
+  }
+
+  /// 更新host文件中的本地标记
+  static updateTag(tag, String content) async {
+    String hostData = await getHostData();
+    String tagStart = '##$tag Start##';
+    String tagEnd = '##$tag End##';
+    content = '$tagStart\n$content\n$tagEnd';
+    String reStr = tagStart;
+    reStr += r'([\s\S]*)';
+    reStr += tagEnd;
+    RegExp regex = RegExp(reStr);
+
+    var s =  regex.stringMatch(hostData);
+    if(s != null){
+      hostData = hostData.replaceAll(regex, content);
+    }else{
+      hostData += "$content\n";
+    }
+    return save(hostData);
   }
 }
