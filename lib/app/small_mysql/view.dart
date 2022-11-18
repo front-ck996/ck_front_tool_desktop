@@ -17,7 +17,19 @@ class SmallMysqlPage extends StatelessWidget {
         body: AppBasicContainer(
             builder: (BuildContext context,BoxConstraints constraints, AsyncSnapshot snapshot){
               return Container(padding: const EdgeInsets.all(20), child:Column(
-                children: [],
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        width: 150,
+                        child: Text('mysql'),
+                      ),
+                      TextButton(onPressed: (){
+
+                      }, child: Text('启动')),
+                    ],
+                  )
+                ],
               ));
             }
         )
