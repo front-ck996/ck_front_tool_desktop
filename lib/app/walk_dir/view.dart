@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -32,13 +33,30 @@ class WalkDirPage extends StatelessWidget {
                   SizedBox(height: 10,),
                   Obx(() => Text(logic.f.value)),
                   Obx(() => Text(logic.process.value)),
-                  Expanded(child: SmartRefresher(
-                    controller: logic.refreshController,
-                    onRefresh: logic.onRefresh,
-                    child: ListView.builder(itemBuilder: (BuildContext context, int index){
-                      return Container();
-                    }),
-                  ))
+                  Expanded(child: Obx((){
+                    return ListView.builder(
+                      itemCount: logic.list.value.length,
+                      itemBuilder: (BuildContext context, int index){
+                        WalkDiskListData info = logic.list[index];
+                        if(index+1 >= logic.list.length && !logic.loading){
+                          logic.onLoading();
+                        }
+                        return Container(height: 30,child: Row(
+                          children: [
+                            Expanded(child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                Container(child: Text(info.dir),)
+                              ],
+                            )),
+                            Text(info.sizeFormat)
+                          ],
+                        ));
+
+
+                      }
+                    );
+                  }))
                 ],
               ));
             }

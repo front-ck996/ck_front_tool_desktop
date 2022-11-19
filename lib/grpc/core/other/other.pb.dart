@@ -7,7 +7,6 @@
 
 import 'dart:core' as $core;
 
-import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class Empty extends $pb.GeneratedMessage {
@@ -41,7 +40,7 @@ class Empty extends $pb.GeneratedMessage {
 
 class Code extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Code', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_other'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'code')
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'code', $pb.PbFieldType.O3)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msg')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error')
     ..hasRequiredFields = false
@@ -49,7 +48,7 @@ class Code extends $pb.GeneratedMessage {
 
   Code._() : super();
   factory Code({
-    $fixnum.Int64? code,
+    $core.int? code,
     $core.String? msg,
     $core.String? error,
   }) {
@@ -87,9 +86,9 @@ class Code extends $pb.GeneratedMessage {
   static Code? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get code => $_getI64(0);
+  $core.int get code => $_getIZ(0);
   @$pb.TagNumber(1)
-  set code($fixnum.Int64 v) { $_setInt64(0, v); }
+  set code($core.int v) { $_setSignedInt32(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasCode() => $_has(0);
   @$pb.TagNumber(1)
@@ -227,18 +226,18 @@ class ResponseWalkDisk extends $pb.GeneratedMessage {
 class WalkDiskListRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WalkDiskListRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_other'), createEmptyInstance: create)
     ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort')
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSize', protoName: 'pageSize')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sId', protoName: 'sId')
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSum', protoName: 'pageSum')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSize', $pb.PbFieldType.O3, protoName: 'pageSize')
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sId', $pb.PbFieldType.O3, protoName: 'sId')
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSum', $pb.PbFieldType.O3, protoName: 'pageSum')
     ..hasRequiredFields = false
   ;
 
   WalkDiskListRequest._() : super();
   factory WalkDiskListRequest({
     $core.Iterable<$core.String>? sort,
-    $fixnum.Int64? pageSize,
-    $fixnum.Int64? sId,
-    $fixnum.Int64? pageSum,
+    $core.int? pageSize,
+    $core.int? sId,
+    $core.int? pageSum,
   }) {
     final _result = create();
     if (sort != null) {
@@ -280,27 +279,27 @@ class WalkDiskListRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get sort => $_getList(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get pageSize => $_getI64(1);
+  $core.int get pageSize => $_getIZ(1);
   @$pb.TagNumber(2)
-  set pageSize($fixnum.Int64 v) { $_setInt64(1, v); }
+  set pageSize($core.int v) { $_setSignedInt32(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasPageSize() => $_has(1);
   @$pb.TagNumber(2)
   void clearPageSize() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get sId => $_getI64(2);
+  $core.int get sId => $_getIZ(2);
   @$pb.TagNumber(3)
-  set sId($fixnum.Int64 v) { $_setInt64(2, v); }
+  set sId($core.int v) { $_setSignedInt32(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasSId() => $_has(2);
   @$pb.TagNumber(3)
   void clearSId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get pageSum => $_getI64(3);
+  $core.int get pageSum => $_getIZ(3);
   @$pb.TagNumber(4)
-  set pageSum($fixnum.Int64 v) { $_setInt64(3, v); }
+  set pageSum($core.int v) { $_setSignedInt32(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasPageSum() => $_has(3);
   @$pb.TagNumber(4)
@@ -310,14 +309,14 @@ class WalkDiskListRequest extends $pb.GeneratedMessage {
 class WalkDiskListResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WalkDiskListResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_other'), createEmptyInstance: create)
     ..pc<WalkDiskListData>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.PM, subBuilder: WalkDiskListData.create)
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSize', protoName: 'pageSize')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSize', $pb.PbFieldType.O3, protoName: 'pageSize')
     ..hasRequiredFields = false
   ;
 
   WalkDiskListResponse._() : super();
   factory WalkDiskListResponse({
     $core.Iterable<WalkDiskListData>? data,
-    $fixnum.Int64? pageSize,
+    $core.int? pageSize,
   }) {
     final _result = create();
     if (data != null) {
@@ -353,9 +352,9 @@ class WalkDiskListResponse extends $pb.GeneratedMessage {
   $core.List<WalkDiskListData> get data => $_getList(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get pageSize => $_getI64(1);
+  $core.int get pageSize => $_getIZ(1);
   @$pb.TagNumber(2)
-  set pageSize($fixnum.Int64 v) { $_setInt64(1, v); }
+  set pageSize($core.int v) { $_setSignedInt32(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasPageSize() => $_has(1);
   @$pb.TagNumber(2)
@@ -365,14 +364,18 @@ class WalkDiskListResponse extends $pb.GeneratedMessage {
 class WalkDiskListData extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WalkDiskListData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_other'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dir')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size')
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size', $pb.PbFieldType.O3)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sizeFormat', protoName: 'sizeFormat')
+    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
   WalkDiskListData._() : super();
   factory WalkDiskListData({
     $core.String? dir,
-    $fixnum.Int64? size,
+    $core.int? size,
+    $core.String? sizeFormat,
+    $core.int? id,
   }) {
     final _result = create();
     if (dir != null) {
@@ -380,6 +383,12 @@ class WalkDiskListData extends $pb.GeneratedMessage {
     }
     if (size != null) {
       _result.size = size;
+    }
+    if (sizeFormat != null) {
+      _result.sizeFormat = sizeFormat;
+    }
+    if (id != null) {
+      _result.id = id;
     }
     return _result;
   }
@@ -414,12 +423,30 @@ class WalkDiskListData extends $pb.GeneratedMessage {
   void clearDir() => clearField(1);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get size => $_getI64(1);
+  $core.int get size => $_getIZ(1);
   @$pb.TagNumber(3)
-  set size($fixnum.Int64 v) { $_setInt64(1, v); }
+  set size($core.int v) { $_setSignedInt32(1, v); }
   @$pb.TagNumber(3)
   $core.bool hasSize() => $_has(1);
   @$pb.TagNumber(3)
   void clearSize() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sizeFormat => $_getSZ(2);
+  @$pb.TagNumber(4)
+  set sizeFormat($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSizeFormat() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearSizeFormat() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get id => $_getIZ(3);
+  @$pb.TagNumber(5)
+  set id($core.int v) { $_setUnsignedInt32(3, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasId() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearId() => clearField(5);
 }
 
