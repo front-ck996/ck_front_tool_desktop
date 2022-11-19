@@ -43,6 +43,7 @@ dependencies:
   path_provider: ^2.0.11
   navigation_history_observer: ^1.1.0
   grpc: ^3.1.0
+  pull_to_refresh: ^2.0.0
 
 dev_dependencies:
   flutter_test:

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
+
 import '../../grpc/core/other/other.pb.dart';
 import '../../widget/app_basic_container.dart';
 import '../../widget/app_scaffold.dart';
+
 import 'package:ck_front_tool_dart/grpc/handle.dart';
 import 'logic.dart';
 
@@ -28,6 +32,13 @@ class WalkDirPage extends StatelessWidget {
                   SizedBox(height: 10,),
                   Obx(() => Text(logic.f.value)),
                   Obx(() => Text(logic.process.value)),
+                  Expanded(child: SmartRefresher(
+                    controller: logic.refreshController,
+                    onRefresh: logic.onRefresh,
+                    child: ListView.builder(itemBuilder: (BuildContext context, int index){
+                      return Container();
+                    }),
+                  ))
                 ],
               ));
             }

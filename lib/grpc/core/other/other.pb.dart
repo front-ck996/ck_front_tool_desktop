@@ -224,3 +224,202 @@ class ResponseWalkDisk extends $pb.GeneratedMessage {
   Code ensureCode() => $_ensure(1);
 }
 
+class WalkDiskListRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WalkDiskListRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_other'), createEmptyInstance: create)
+    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort')
+    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSize', protoName: 'pageSize')
+    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sId', protoName: 'sId')
+    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSum', protoName: 'pageSum')
+    ..hasRequiredFields = false
+  ;
+
+  WalkDiskListRequest._() : super();
+  factory WalkDiskListRequest({
+    $core.Iterable<$core.String>? sort,
+    $fixnum.Int64? pageSize,
+    $fixnum.Int64? sId,
+    $fixnum.Int64? pageSum,
+  }) {
+    final _result = create();
+    if (sort != null) {
+      _result.sort.addAll(sort);
+    }
+    if (pageSize != null) {
+      _result.pageSize = pageSize;
+    }
+    if (sId != null) {
+      _result.sId = sId;
+    }
+    if (pageSum != null) {
+      _result.pageSum = pageSum;
+    }
+    return _result;
+  }
+  factory WalkDiskListRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WalkDiskListRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  WalkDiskListRequest clone() => WalkDiskListRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WalkDiskListRequest copyWith(void Function(WalkDiskListRequest) updates) => super.copyWith((message) => updates(message as WalkDiskListRequest)) as WalkDiskListRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static WalkDiskListRequest create() => WalkDiskListRequest._();
+  WalkDiskListRequest createEmptyInstance() => create();
+  static $pb.PbList<WalkDiskListRequest> createRepeated() => $pb.PbList<WalkDiskListRequest>();
+  @$core.pragma('dart2js:noInline')
+  static WalkDiskListRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WalkDiskListRequest>(create);
+  static WalkDiskListRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get sort => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get pageSize => $_getI64(1);
+  @$pb.TagNumber(2)
+  set pageSize($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageSize() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageSize() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get sId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set sId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get pageSum => $_getI64(3);
+  @$pb.TagNumber(4)
+  set pageSum($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPageSum() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPageSum() => clearField(4);
+}
+
+class WalkDiskListResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WalkDiskListResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_other'), createEmptyInstance: create)
+    ..pc<WalkDiskListData>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.PM, subBuilder: WalkDiskListData.create)
+    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSize', protoName: 'pageSize')
+    ..hasRequiredFields = false
+  ;
+
+  WalkDiskListResponse._() : super();
+  factory WalkDiskListResponse({
+    $core.Iterable<WalkDiskListData>? data,
+    $fixnum.Int64? pageSize,
+  }) {
+    final _result = create();
+    if (data != null) {
+      _result.data.addAll(data);
+    }
+    if (pageSize != null) {
+      _result.pageSize = pageSize;
+    }
+    return _result;
+  }
+  factory WalkDiskListResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WalkDiskListResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  WalkDiskListResponse clone() => WalkDiskListResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WalkDiskListResponse copyWith(void Function(WalkDiskListResponse) updates) => super.copyWith((message) => updates(message as WalkDiskListResponse)) as WalkDiskListResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static WalkDiskListResponse create() => WalkDiskListResponse._();
+  WalkDiskListResponse createEmptyInstance() => create();
+  static $pb.PbList<WalkDiskListResponse> createRepeated() => $pb.PbList<WalkDiskListResponse>();
+  @$core.pragma('dart2js:noInline')
+  static WalkDiskListResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WalkDiskListResponse>(create);
+  static WalkDiskListResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<WalkDiskListData> get data => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get pageSize => $_getI64(1);
+  @$pb.TagNumber(2)
+  set pageSize($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageSize() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageSize() => clearField(2);
+}
+
+class WalkDiskListData extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WalkDiskListData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_other'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dir')
+    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size')
+    ..hasRequiredFields = false
+  ;
+
+  WalkDiskListData._() : super();
+  factory WalkDiskListData({
+    $core.String? dir,
+    $fixnum.Int64? size,
+  }) {
+    final _result = create();
+    if (dir != null) {
+      _result.dir = dir;
+    }
+    if (size != null) {
+      _result.size = size;
+    }
+    return _result;
+  }
+  factory WalkDiskListData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WalkDiskListData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  WalkDiskListData clone() => WalkDiskListData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WalkDiskListData copyWith(void Function(WalkDiskListData) updates) => super.copyWith((message) => updates(message as WalkDiskListData)) as WalkDiskListData; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static WalkDiskListData create() => WalkDiskListData._();
+  WalkDiskListData createEmptyInstance() => create();
+  static $pb.PbList<WalkDiskListData> createRepeated() => $pb.PbList<WalkDiskListData>();
+  @$core.pragma('dart2js:noInline')
+  static WalkDiskListData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WalkDiskListData>(create);
+  static WalkDiskListData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get dir => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set dir($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDir() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDir() => clearField(1);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get size => $_getI64(1);
+  @$pb.TagNumber(3)
+  set size($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSize() => $_has(1);
+  @$pb.TagNumber(3)
+  void clearSize() => clearField(3);
+}
+

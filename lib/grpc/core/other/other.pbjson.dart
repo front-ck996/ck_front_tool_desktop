@@ -48,3 +48,38 @@ const ResponseWalkDisk$json = const {
 
 /// Descriptor for `ResponseWalkDisk`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List responseWalkDiskDescriptor = $convert.base64Decode('ChBSZXNwb25zZVdhbGtEaXNrEhIKBGZpbGUYASABKAlSBGZpbGUSJQoEY29kZRgCIAEoCzIRLnByb3RvX290aGVyLkNvZGVSBGNvZGU=');
+@$core.Deprecated('Use walkDiskListRequestDescriptor instead')
+const WalkDiskListRequest$json = const {
+  '1': 'WalkDiskListRequest',
+  '2': const [
+    const {'1': 'sort', '3': 1, '4': 3, '5': 9, '10': 'sort'},
+    const {'1': 'pageSize', '3': 2, '4': 1, '5': 3, '10': 'pageSize'},
+    const {'1': 'sId', '3': 3, '4': 1, '5': 3, '10': 'sId'},
+    const {'1': 'pageSum', '3': 4, '4': 1, '5': 3, '10': 'pageSum'},
+  ],
+};
+
+/// Descriptor for `WalkDiskListRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List walkDiskListRequestDescriptor = $convert.base64Decode('ChNXYWxrRGlza0xpc3RSZXF1ZXN0EhIKBHNvcnQYASADKAlSBHNvcnQSGgoIcGFnZVNpemUYAiABKANSCHBhZ2VTaXplEhAKA3NJZBgDIAEoA1IDc0lkEhgKB3BhZ2VTdW0YBCABKANSB3BhZ2VTdW0=');
+@$core.Deprecated('Use walkDiskListResponseDescriptor instead')
+const WalkDiskListResponse$json = const {
+  '1': 'WalkDiskListResponse',
+  '2': const [
+    const {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.proto_other.WalkDiskListData', '10': 'data'},
+    const {'1': 'pageSize', '3': 2, '4': 1, '5': 3, '10': 'pageSize'},
+  ],
+};
+
+/// Descriptor for `WalkDiskListResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List walkDiskListResponseDescriptor = $convert.base64Decode('ChRXYWxrRGlza0xpc3RSZXNwb25zZRIxCgRkYXRhGAEgAygLMh0ucHJvdG9fb3RoZXIuV2Fsa0Rpc2tMaXN0RGF0YVIEZGF0YRIaCghwYWdlU2l6ZRgCIAEoA1IIcGFnZVNpemU=');
+@$core.Deprecated('Use walkDiskListDataDescriptor instead')
+const WalkDiskListData$json = const {
+  '1': 'WalkDiskListData',
+  '2': const [
+    const {'1': 'dir', '3': 1, '4': 1, '5': 9, '10': 'dir'},
+    const {'1': 'size', '3': 3, '4': 1, '5': 3, '10': 'size'},
+  ],
+};
+
+/// Descriptor for `WalkDiskListData`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List walkDiskListDataDescriptor = $convert.base64Decode('ChBXYWxrRGlza0xpc3REYXRhEhAKA2RpchgBIAEoCVIDZGlyEhIKBHNpemUYAyABKANSBHNpemU=');

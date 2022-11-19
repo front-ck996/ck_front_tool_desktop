@@ -21,6 +21,12 @@ class CkToolGoRPCClient extends $grpc.Client {
           ($0.RequestWalkDisk value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.ResponseWalkDisk.fromBuffer(value));
+  static final _$walkDiskList =
+      $grpc.ClientMethod<$0.WalkDiskListRequest, $0.WalkDiskListResponse>(
+          '/cr.CkToolGoRPC/WalkDiskList',
+          ($0.WalkDiskListRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.WalkDiskListResponse.fromBuffer(value));
   static final _$walkDiskProcess = $grpc.ClientMethod<$0.Empty, $0.Code>(
       '/cr.CkToolGoRPC/WalkDiskProcess',
       ($0.Empty value) => value.writeToBuffer(),
@@ -42,6 +48,12 @@ class CkToolGoRPCClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.ResponseWalkDisk> walkDisk($0.RequestWalkDisk request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$walkDisk, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.WalkDiskListResponse> walkDiskList(
+      $0.WalkDiskListRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$walkDiskList, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.Code> walkDiskProcess($0.Empty request,
@@ -71,6 +83,15 @@ abstract class CkToolGoRPCServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RequestWalkDisk.fromBuffer(value),
         ($0.ResponseWalkDisk value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.WalkDiskListRequest, $0.WalkDiskListResponse>(
+            'WalkDiskList',
+            walkDiskList_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.WalkDiskListRequest.fromBuffer(value),
+            ($0.WalkDiskListResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.Empty, $0.Code>(
         'WalkDiskProcess',
         walkDiskProcess_Pre,
@@ -99,6 +120,12 @@ abstract class CkToolGoRPCServiceBase extends $grpc.Service {
     return walkDisk(call, await request);
   }
 
+  $async.Future<$0.WalkDiskListResponse> walkDiskList_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.WalkDiskListRequest> request) async {
+    return walkDiskList(call, await request);
+  }
+
   $async.Future<$0.Code> walkDiskProcess_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return walkDiskProcess(call, await request);
@@ -116,6 +143,8 @@ abstract class CkToolGoRPCServiceBase extends $grpc.Service {
 
   $async.Future<$0.ResponseWalkDisk> walkDisk(
       $grpc.ServiceCall call, $0.RequestWalkDisk request);
+  $async.Future<$0.WalkDiskListResponse> walkDiskList(
+      $grpc.ServiceCall call, $0.WalkDiskListRequest request);
   $async.Future<$0.Code> walkDiskProcess(
       $grpc.ServiceCall call, $0.Empty request);
   $async.Future<$0.Code> mysqlStart(
