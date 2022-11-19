@@ -9,61 +9,83 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class ReqStart extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ReqStart', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_mysql'), createEmptyInstance: create)
+import '../other/other.pb.dart' as $0;
+
+class MysqlReqStart extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MysqlReqStart', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_mysql'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  ReqStart._() : super();
-  factory ReqStart() => create();
-  factory ReqStart.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ReqStart.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  MysqlReqStart._() : super();
+  factory MysqlReqStart() => create();
+  factory MysqlReqStart.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MysqlReqStart.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ReqStart clone() => ReqStart()..mergeFromMessage(this);
+  MysqlReqStart clone() => MysqlReqStart()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ReqStart copyWith(void Function(ReqStart) updates) => super.copyWith((message) => updates(message as ReqStart)) as ReqStart; // ignore: deprecated_member_use
+  MysqlReqStart copyWith(void Function(MysqlReqStart) updates) => super.copyWith((message) => updates(message as MysqlReqStart)) as MysqlReqStart; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ReqStart create() => ReqStart._();
-  ReqStart createEmptyInstance() => create();
-  static $pb.PbList<ReqStart> createRepeated() => $pb.PbList<ReqStart>();
+  static MysqlReqStart create() => MysqlReqStart._();
+  MysqlReqStart createEmptyInstance() => create();
+  static $pb.PbList<MysqlReqStart> createRepeated() => $pb.PbList<MysqlReqStart>();
   @$core.pragma('dart2js:noInline')
-  static ReqStart getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReqStart>(create);
-  static ReqStart? _defaultInstance;
+  static MysqlReqStart getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MysqlReqStart>(create);
+  static MysqlReqStart? _defaultInstance;
 }
 
-class ResStart extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResStart', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_mysql'), createEmptyInstance: create)
+class MysqlResStart extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MysqlResStart', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_mysql'), createEmptyInstance: create)
+    ..aOM<$0.Code>(100, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'code', subBuilder: $0.Code.create)
     ..hasRequiredFields = false
   ;
 
-  ResStart._() : super();
-  factory ResStart() => create();
-  factory ResStart.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ResStart.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  MysqlResStart._() : super();
+  factory MysqlResStart({
+    $0.Code? code,
+  }) {
+    final _result = create();
+    if (code != null) {
+      _result.code = code;
+    }
+    return _result;
+  }
+  factory MysqlResStart.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MysqlResStart.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ResStart clone() => ResStart()..mergeFromMessage(this);
+  MysqlResStart clone() => MysqlResStart()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ResStart copyWith(void Function(ResStart) updates) => super.copyWith((message) => updates(message as ResStart)) as ResStart; // ignore: deprecated_member_use
+  MysqlResStart copyWith(void Function(MysqlResStart) updates) => super.copyWith((message) => updates(message as MysqlResStart)) as MysqlResStart; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ResStart create() => ResStart._();
-  ResStart createEmptyInstance() => create();
-  static $pb.PbList<ResStart> createRepeated() => $pb.PbList<ResStart>();
+  static MysqlResStart create() => MysqlResStart._();
+  MysqlResStart createEmptyInstance() => create();
+  static $pb.PbList<MysqlResStart> createRepeated() => $pb.PbList<MysqlResStart>();
   @$core.pragma('dart2js:noInline')
-  static ResStart getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResStart>(create);
-  static ResStart? _defaultInstance;
+  static MysqlResStart getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MysqlResStart>(create);
+  static MysqlResStart? _defaultInstance;
+
+  @$pb.TagNumber(100)
+  $0.Code get code => $_getN(0);
+  @$pb.TagNumber(100)
+  set code($0.Code v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(100)
+  void clearCode() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.Code ensureCode() => $_ensure(0);
 }
 

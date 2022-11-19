@@ -1,3 +1,6 @@
+import 'package:ck_front_tool_dart/grpc/core/mysql/mysql.pb.dart';
+import 'package:ck_front_tool_dart/grpc/core/other/other.pb.dart';
+import 'package:ck_front_tool_dart/grpc/handle.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../widget/app_basic_container.dart';
@@ -24,9 +27,16 @@ class SmallMysqlPage extends StatelessWidget {
                         width: 150,
                         child: Text('mysql'),
                       ),
-                      TextButton(onPressed: (){
-
+                      TextButton(onPressed: () async {
+                        Code code =  await UGrpcHandle.getHandle().mysqlStart(MysqlReqStart());
+                        print(code);
+                       // print(mysqlStart);
                       }, child: Text('启动')),
+
+                      TextButton(onPressed: () async {
+                        Code code =  await UGrpcHandle.getHandle().mysqlStop(MysqlReqStart());
+                        print(code);
+                      }, child: Text('关闭')),
                     ],
                   )
                 ],
