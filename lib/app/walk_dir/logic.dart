@@ -13,11 +13,14 @@ class WalkDirLogic extends GetxController {
   final f = ''.obs;
   final process = ''.obs;
   bool loading = false;
+  String? link;
   Timer? soundTimer;
   final list = [].obs;
   onRefresh() async {
+    list.value = [];
      var _list =  await UGrpcHandle.getHandle().walkDiskList(WalkDiskListRequest(
         sId: 0,
+        link: link,
       ));
      _list.data.forEach((element) {
        list.add(element);
@@ -30,6 +33,7 @@ class WalkDirLogic extends GetxController {
       print(list[list.length-1].id);
       var _list =  await UGrpcHandle.getHandle().walkDiskList(WalkDiskListRequest(
         sId: list.length,
+        link: link,
       ));
       //
       _list.data.forEach((element) {

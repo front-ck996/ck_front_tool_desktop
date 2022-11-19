@@ -2,6 +2,8 @@ import 'dart:io';
 import 'dart:isolate';
 
 // import 'package:ck_front_tool_dart/ffi_binary/go_script.dart';
+import 'package:ck_front_tool_dart/grpc/core/other/other.pb.dart';
+import 'package:ck_front_tool_dart/grpc/handle.dart';
 import 'package:ck_front_tool_dart/utils/print_process_result.dart';
 import 'package:ck_front_tool_dart/utils/raw_fithubusercontent_cpm_ips.dart';
 import 'package:ck_front_tool_dart/utils/u_toast.dart';
@@ -37,12 +39,17 @@ class LocationFileHost {
 
 
  static void entryPoint(SendPort sendPort) {
-    // RawGithubusercontentComIps data = GoScript.getRawGithubusercontentComIps();
-    // sendPort.send(data);
+    try{
+      RawGithubusercontentComIps data = RawGithubusercontentComIps.run();
+      sendPort.send(data);
+    }catch(e){
+      sendPort.send(null);
+    }
   }
   ///  调用脚本并将结果写入本地 hosts 文件
   static updateRowGithubComAndWriteHosts() async {
-
+    // Code res = await UGrpcHandle.getHandle().getRawIps(Empty());
+    // print(res);
     if(_isolate != null){
       _isolate!.kill();
     }
@@ -50,6 +57,9 @@ class LocationFileHost {
     UToast.openLoading();
     final receiver = ReceivePort();
     receiver.listen((data) async {
+      if(data == null){
+        return;
+      }
       data = data as RawGithubusercontentComIps;
       UToast.closeLoading();
       String hostData = await getHostData();

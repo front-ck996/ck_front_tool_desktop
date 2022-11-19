@@ -1,8 +1,8 @@
 
+import 'package:ck_front_tool_dart/utils/open_dir_resources.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../grpc/core/other/other.pb.dart';
 import '../../widget/app_basic_container.dart';
@@ -41,15 +41,32 @@ class WalkDirPage extends StatelessWidget {
                         if(index+1 >= logic.list.length && !logic.loading){
                           logic.onLoading();
                         }
-                        return Container(height: 30,child: Row(
+                        return Container(padding: EdgeInsets.only(top: 5, bottom: 5),height: 35,child: Row(
                           children: [
                             Expanded(child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                Container(child: Text(info.dir),)
+                                SelectableText(info.dir)
                               ],
                             )),
-                            Text(info.sizeFormat)
+
+                            Container(
+                              margin: const EdgeInsets.only(right: 5),
+                              child:  Text(info.sizeFormat),
+                            ),
+                            ElevatedButton(onPressed: (){
+                              openDirResources(info.dir);
+                            }, child: Text('本地打开')),
+                            const SizedBox(width: 10,),
+                            ElevatedButton(onPressed: (){
+                              logic.link = info.dir;
+                              logic.onRefresh();
+                            }, child: Text('只看该目录')),
+                            const SizedBox(width: 10,),
+                            ElevatedButton(onPressed: (){
+                              logic.link = '';
+                              logic.onRefresh();
+                            }, child: Text('全部')),
                           ],
                         ));
 

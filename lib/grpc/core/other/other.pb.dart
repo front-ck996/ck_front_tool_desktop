@@ -229,6 +229,7 @@ class WalkDiskListRequest extends $pb.GeneratedMessage {
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSize', $pb.PbFieldType.O3, protoName: 'pageSize')
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sId', $pb.PbFieldType.O3, protoName: 'sId')
     ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSum', $pb.PbFieldType.O3, protoName: 'pageSum')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'link')
     ..hasRequiredFields = false
   ;
 
@@ -238,6 +239,7 @@ class WalkDiskListRequest extends $pb.GeneratedMessage {
     $core.int? pageSize,
     $core.int? sId,
     $core.int? pageSum,
+    $core.String? link,
   }) {
     final _result = create();
     if (sort != null) {
@@ -251,6 +253,9 @@ class WalkDiskListRequest extends $pb.GeneratedMessage {
     }
     if (pageSum != null) {
       _result.pageSum = pageSum;
+    }
+    if (link != null) {
+      _result.link = link;
     }
     return _result;
   }
@@ -304,6 +309,15 @@ class WalkDiskListRequest extends $pb.GeneratedMessage {
   $core.bool hasPageSum() => $_has(3);
   @$pb.TagNumber(4)
   void clearPageSum() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get link => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set link($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLink() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLink() => clearField(5);
 }
 
 class WalkDiskListResponse extends $pb.GeneratedMessage {

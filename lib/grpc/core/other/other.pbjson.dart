@@ -56,11 +56,12 @@ const WalkDiskListRequest$json = const {
     const {'1': 'pageSize', '3': 2, '4': 1, '5': 5, '10': 'pageSize'},
     const {'1': 'sId', '3': 3, '4': 1, '5': 5, '10': 'sId'},
     const {'1': 'pageSum', '3': 4, '4': 1, '5': 5, '10': 'pageSum'},
+    const {'1': 'link', '3': 5, '4': 1, '5': 9, '10': 'link'},
   ],
 };
 
 /// Descriptor for `WalkDiskListRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List walkDiskListRequestDescriptor = $convert.base64Decode('ChNXYWxrRGlza0xpc3RSZXF1ZXN0EhIKBHNvcnQYASADKAlSBHNvcnQSGgoIcGFnZVNpemUYAiABKAVSCHBhZ2VTaXplEhAKA3NJZBgDIAEoBVIDc0lkEhgKB3BhZ2VTdW0YBCABKAVSB3BhZ2VTdW0=');
+final $typed_data.Uint8List walkDiskListRequestDescriptor = $convert.base64Decode('ChNXYWxrRGlza0xpc3RSZXF1ZXN0EhIKBHNvcnQYASADKAlSBHNvcnQSGgoIcGFnZVNpemUYAiABKAVSCHBhZ2VTaXplEhAKA3NJZBgDIAEoBVIDc0lkEhgKB3BhZ2VTdW0YBCABKAVSB3BhZ2VTdW0SEgoEbGluaxgFIAEoCVIEbGluaw==');
 @$core.Deprecated('Use walkDiskListResponseDescriptor instead')
 const WalkDiskListResponse$json = const {
   '1': 'WalkDiskListResponse',
