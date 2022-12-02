@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:fixnum/fixnum.dart';
 import 'package:get/get.dart';
-import 'package:fixnum/fixnum.dart';
 
 import 'package:ck_front_tool_dart/grpc/core/other/other.pb.dart';
 import 'package:ck_front_tool_dart/grpc/handle.dart';

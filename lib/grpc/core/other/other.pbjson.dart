@@ -86,3 +86,14 @@ const WalkDiskListData$json = const {
 
 /// Descriptor for `WalkDiskListData`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List walkDiskListDataDescriptor = $convert.base64Decode('ChBXYWxrRGlza0xpc3REYXRhEhAKA2RpchgBIAEoCVIDZGlyEhIKBHNpemUYAyABKAVSBHNpemUSHgoKc2l6ZUZvcm1hdBgEIAEoCVIKc2l6ZUZvcm1hdBIOCgJpZBgFIAEoDVICaWQ=');
+@$core.Deprecated('Use systemStatusDescriptor instead')
+const SystemStatus$json = const {
+  '1': 'SystemStatus',
+  '2': const [
+    const {'1': 'MysqlStatus', '3': 1, '4': 1, '5': 9, '10': 'MysqlStatus'},
+    const {'1': 'MysqlPort', '3': 2, '4': 1, '5': 9, '10': 'MysqlPort'},
+  ],
+};
+
+/// Descriptor for `SystemStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List systemStatusDescriptor = $convert.base64Decode('CgxTeXN0ZW1TdGF0dXMSIAoLTXlzcWxTdGF0dXMYASABKAlSC015c3FsU3RhdHVzEhwKCU15c3FsUG9ydBgCIAEoCVIJTXlzcWxQb3J0');

@@ -1,21 +1,25 @@
+import 'package:ck_front_tool_dart/grpc/core/other/other.pb.dart';
+import 'package:ck_front_tool_dart/init.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
+import 'package:grpc/grpc.dart';
 import 'package:navigation_history_observer/navigation_history_observer.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'package:ck_front_tool_dart/app_router/app_router.dart';
 import 'package:ck_front_tool_dart/utils/u_toast.dart';
 import 'package:ck_front_tool_dart/utils/u_store.dart';
+import 'package:ck_front_tool_dart/grpc/handle.dart';
 void main() {
   UStore.init();
+  AppInit.init();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return RefreshConfiguration(

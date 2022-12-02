@@ -464,3 +464,64 @@ class WalkDiskListData extends $pb.GeneratedMessage {
   void clearId() => clearField(5);
 }
 
+class SystemStatus extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SystemStatus', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto_other'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'MysqlStatus', protoName: 'MysqlStatus')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'MysqlPort', protoName: 'MysqlPort')
+    ..hasRequiredFields = false
+  ;
+
+  SystemStatus._() : super();
+  factory SystemStatus({
+    $core.String? mysqlStatus,
+    $core.String? mysqlPort,
+  }) {
+    final _result = create();
+    if (mysqlStatus != null) {
+      _result.mysqlStatus = mysqlStatus;
+    }
+    if (mysqlPort != null) {
+      _result.mysqlPort = mysqlPort;
+    }
+    return _result;
+  }
+  factory SystemStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SystemStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SystemStatus clone() => SystemStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SystemStatus copyWith(void Function(SystemStatus) updates) => super.copyWith((message) => updates(message as SystemStatus)) as SystemStatus; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SystemStatus create() => SystemStatus._();
+  SystemStatus createEmptyInstance() => create();
+  static $pb.PbList<SystemStatus> createRepeated() => $pb.PbList<SystemStatus>();
+  @$core.pragma('dart2js:noInline')
+  static SystemStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SystemStatus>(create);
+  static SystemStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get mysqlStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set mysqlStatus($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMysqlStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMysqlStatus() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get mysqlPort => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mysqlPort($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMysqlPort() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMysqlPort() => clearField(2);
+}
+

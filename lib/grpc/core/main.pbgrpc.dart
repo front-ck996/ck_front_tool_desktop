@@ -39,6 +39,10 @@ class CkToolGoRPCClient extends $grpc.Client {
       '/cr.CkToolGoRPC/MysqlStop',
       ($1.MysqlReqStart value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Code.fromBuffer(value));
+  static final _$systemStatus = $grpc.ClientMethod<$0.Empty, $0.SystemStatus>(
+      '/cr.CkToolGoRPC/SystemStatus',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.SystemStatus.fromBuffer(value));
 
   CkToolGoRPCClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -69,6 +73,13 @@ class CkToolGoRPCClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.Code> mysqlStop($1.MysqlReqStart request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$mysqlStop, request, options: options);
+  }
+
+  $grpc.ResponseStream<$0.SystemStatus> systemStatus($0.Empty request,
+      {$grpc.CallOptions? options}) {
+    return $createStreamingCall(
+        _$systemStatus, $async.Stream.fromIterable([request]),
+        options: options);
   }
 }
 
@@ -113,6 +124,13 @@ abstract class CkToolGoRPCServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.MysqlReqStart.fromBuffer(value),
         ($0.Code value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $0.SystemStatus>(
+        'SystemStatus',
+        systemStatus_Pre,
+        false,
+        true,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($0.SystemStatus value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ResponseWalkDisk> walkDisk_Pre(
@@ -141,6 +159,11 @@ abstract class CkToolGoRPCServiceBase extends $grpc.Service {
     return mysqlStop(call, await request);
   }
 
+  $async.Stream<$0.SystemStatus> systemStatus_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async* {
+    yield* systemStatus(call, await request);
+  }
+
   $async.Future<$0.ResponseWalkDisk> walkDisk(
       $grpc.ServiceCall call, $0.RequestWalkDisk request);
   $async.Future<$0.WalkDiskListResponse> walkDiskList(
@@ -151,4 +174,6 @@ abstract class CkToolGoRPCServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $1.MysqlReqStart request);
   $async.Future<$0.Code> mysqlStop(
       $grpc.ServiceCall call, $1.MysqlReqStart request);
+  $async.Stream<$0.SystemStatus> systemStatus(
+      $grpc.ServiceCall call, $0.Empty request);
 }
